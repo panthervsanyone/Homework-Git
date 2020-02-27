@@ -1,0 +1,149 @@
+-- MySQL dump 10.17  Distrib 10.3.13-MariaDB, for Win64 (AMD64)
+--
+-- Host: localhost    Database: auto
+-- ------------------------------------------------------
+-- Server version	10.3.13-MariaDB-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `auto`
+--
+
+DROP TABLE IF EXISTS `auto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name_auto` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auto`
+--
+
+LOCK TABLES `auto` WRITE;
+/*!40000 ALTER TABLE `auto` DISABLE KEYS */;
+INSERT INTO `auto` VALUES (1,'Dodge'),(2,'Ford'),(3,'Chevrolet'),(4,'Mercedes-Benz'),(5,'BMW'),(6,'Audi'),(7,'Porsche'),(8,'Volkswagen'),(9,'Toyota'),(10,'Mazda'),(11,'Lexus'),(12,'Acura'),(13,'Subaru'),(14,'Lamborghini'),(15,'Land Rover'),(16,'Bugatti'),(17,'Aston Martin'),(18,'Koenigsegg');
+/*!40000 ALTER TABLE `auto` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `auto_model`
+--
+
+DROP TABLE IF EXISTS `auto_model`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `auto_model` (
+  `auto_id` int(11) NOT NULL DEFAULT 0,
+  `id_model` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `auto_model`
+--
+
+LOCK TABLES `auto_model` WRITE;
+/*!40000 ALTER TABLE `auto_model` DISABLE KEYS */;
+INSERT INTO `auto_model` VALUES (1,1),(1,2),(1,3),(2,4),(2,5),(2,6),(3,7),(3,8),(3,9),(4,10),(4,11),(4,12),(5,13),(5,14),(5,15),(6,16),(6,17),(6,18),(7,19),(7,20),(7,21),(7,22),(8,23),(8,24),(8,25),(9,26),(9,27),(9,28),(10,29),(10,30),(10,31),(11,32),(11,33),(11,34),(12,35),(12,36),(12,37),(13,38),(13,39),(13,40),(14,41),(14,42),(14,43),(15,44),(15,45),(15,46),(16,47),(16,48),(16,49),(17,50),(17,51),(17,52),(18,53),(18,54),(18,55);
+/*!40000 ALTER TABLE `auto_model` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `manufacturer`
+--
+
+DROP TABLE IF EXISTS `manufacturer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `manufacturer` (
+  `id_manufacturer` int(11) NOT NULL AUTO_INCREMENT,
+  `manufacturer` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `country` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  PRIMARY KEY (`id_manufacturer`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `manufacturer`
+--
+
+LOCK TABLES `manufacturer` WRITE;
+/*!40000 ALTER TABLE `manufacturer` DISABLE KEYS */;
+INSERT INTO `manufacturer` VALUES (1,'Chrysler','USA'),(2,'Ford Motor Company','USA'),(3,'General Motors','USA'),(4,'Mercedes-Benz','Germany'),(5,'Bayerische Motoren Werke','Germany'),(6,'Volkswagen Group','Germany'),(7,'Toyota Motor Corporation','Japan'),(8,'Mazda Motor Corporation','Japan'),(9,'Honda Motor Corporation','Japan'),(10,'Subaru Corporation','Japan'),(11,'Tata Motors','England'),(12,'Aston Martin Limited','England'),(13,'Koenigsegg Automotive AB','Sweden');
+/*!40000 ALTER TABLE `manufacturer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `manufacturer_auto`
+--
+
+DROP TABLE IF EXISTS `manufacturer_auto`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `manufacturer_auto` (
+  `auto_id` int(11) NOT NULL DEFAULT 0,
+  `manufacture_id` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `manufacturer_auto`
+--
+
+LOCK TABLES `manufacturer_auto` WRITE;
+/*!40000 ALTER TABLE `manufacturer_auto` DISABLE KEYS */;
+INSERT INTO `manufacturer_auto` VALUES (1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,6),(8,6),(9,7),(10,8),(11,7),(12,9),(13,10),(14,6),(15,11),(16,6),(17,12),(18,13);
+/*!40000 ALTER TABLE `manufacturer_auto` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `models`
+--
+
+DROP TABLE IF EXISTS `models`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `models` (
+  `id_model` int(11) NOT NULL AUTO_INCREMENT,
+  `model` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `year` int(10) NOT NULL DEFAULT 1970,
+  `auto_id` int(11) NOT NULL DEFAULT 0,
+  `id_manufacturer` int(4) NOT NULL DEFAULT 0,
+  PRIMARY KEY (`id_model`)
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `models`
+--
+
+LOCK TABLES `models` WRITE;
+/*!40000 ALTER TABLE `models` DISABLE KEYS */;
+INSERT INTO `models` VALUES (1,'Charger',1969,1,1),(2,'Challenger',2018,1,1),(3,'Viper',2008,1,1),(4,'Mustang',2009,2,2),(5,'Fusion',2005,2,2),(6,'F-150 Raptor',2008,2,2),(7,'Impala',1967,3,3),(8,'Camaro',1977,3,3),(9,'Corvette',2014,3,3),(10,'W177',2019,4,4),(11,'W247',2019,4,4),(12,'W463',2008,4,4),(13,'M3',2001,5,5),(14,'X6',2008,5,5),(15,'M5',1998,5,5),(16,'Q7',2006,6,6),(17,'R8',2008,6,6),(18,'RS7',2014,6,6),(19,'718 Cayman',2017,7,6),(20,'911 Carrera',2004,7,6),(21,'Panamera 4',2009,7,6),(22,'Taycan',2020,7,6),(23,'Golf GTI',2001,8,6),(24,'Passat',1998,8,6),(25,'Touareg',2002,8,6),(26,'Supra',2020,9,7),(27,'Camry',2008,9,7),(28,'Corolla',2002,9,7),(29,'CX-9',2012,10,8),(30,'Mazda 6',2014,10,8),(31,'RX-8',2008,10,7),(32,'Lexus GS',2005,11,7),(33,'Lexus LFA',2010,11,7),(34,'Lexus LX',2014,11,0),(35,'NSX',2015,12,9),(36,'TLX',2015,12,9),(37,'CDX',2017,12,9),(38,'Impreza',2003,13,10),(39,'Forester',2005,13,10),(40,'WRX',2014,13,10),(41,'Urus',2018,14,6),(42,'Huracan',2012,14,6),(43,'Gallardo',2004,14,6),(44,'Range Rover',2015,15,11),(45,'Discovery',2012,15,11),(46,'Defender',2020,15,11),(47,'Veyron',2011,16,6),(48,'Chiron',2017,16,6),(49,'Centodiecci',2020,16,6),(50,'DB9',2003,17,12),(51,'DBX',2020,17,12),(52,'Rapide',2009,17,12),(53,'Agera',2011,18,13),(54,'CCX',2006,18,13),(55,'Regera',2015,18,13);
+/*!40000 ALTER TABLE `models` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2020-02-27 11:20:40
