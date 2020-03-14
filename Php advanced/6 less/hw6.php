@@ -24,7 +24,7 @@ if ($result = $mysqli->query($query)) {
     $result->close();
 }
 $mysqli->close();
-/*
+
 function message($name){
     return 'Поздравляю, '. $name . ' ты прекрасна,как весна';
     }
@@ -38,7 +38,7 @@ foreach ($SESSION as $name) {
         echo '<br>';
     }
 }
-*/
+
 //2
 //function call(){
 //
